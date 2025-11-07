@@ -1,0 +1,7 @@
+numpy
+trimesh
+open3d
+scipy
+scikit-learn
+matplotlib
+imageio

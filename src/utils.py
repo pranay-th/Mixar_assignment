@@ -8,6 +8,7 @@ def ensure_dir(path):
 def dump_json(path, data):
     with open(path, 'w') as f:
         json.dump(data, f, indent=2)
+    
 
 def init_logger(out_dir):
     ensure_dir(out_dir)

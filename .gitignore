@@ -1,0 +1,59 @@
+# ---------------------------
+# Python cache and build files
+# ---------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+*.so
+*.dll
+*.egg-info/
+*.egg
+build/
+dist/
+
+# ---------------------------
+# Virtual environments
+# ---------------------------
+venv/
+.env/
+.env.bak/
+env/
+*.venv/
+.venv/
+pip-wheel-metadata/
+*.whl
+
+# ---------------------------
+# Jupyter and notebook artifacts
+# ---------------------------
+.ipynb_checkpoints/
+*.ipynb_save
+*.nbconvert/
+
+# ---------------------------
+# Logs and temporary files
+# ---------------------------
+*.log
+*.tmp
+*.bak
+*.swp
+.DS_Store
+Thumbs.db
+
+# ---------------------------
+# IDE / Editor configs
+# ---------------------------
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# ---------------------------
+# OS / Shell-specific
+# ---------------------------
+*.bat
+*.sh
+*.ps1
+*.cmd

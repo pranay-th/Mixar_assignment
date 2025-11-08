@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Cross-platform runner (Linux + macOS). Prefer this if unsure.
+# Mixar Assignment - macOS Runner (no venv)
 
 set -euo pipefail
 
@@ -10,22 +10,19 @@ if ! command -v $PYTHON_BIN >/dev/null 2>&1; then
   exit 1
 fi
 
-if [ ! -d "venv" ]; then
-  echo "[INFO] Creating virtual environment..."
-  $PYTHON_BIN -m venv venv
-fi
-
-# shellcheck disable=SC1091
-source venv/bin/activate
-
-echo "[INFO] Upgrading pip and installing dependencies..."
-pip install --upgrade pip
-pip install -r requirements.txt
+echo "[INFO] Installing Python dependencies (global/user)..."
+pip install --user --upgrade pip
+pip install --user -r requirements.txt
 
 mkdir -p results
 
-echo "[INFO] Running pipeline..."
-$PYTHON_BIN src/pipeline.py --input_dir meshes --out_dir results --clusters 4 --base_bins 1024 --k_density 16 --alpha 1.0
+echo "[INFO] Executing pipeline..."
+$PYTHON_BIN src/pipeline.py \
+  --input_dir meshes \
+  --out_dir results \
+  --clusters 4 \
+  --base_bins 1024 \
+  --k_density 16 \
+  --alpha 1.0
 
-echo "[INFO] Done. Check results/ and results/run.log"
-deactivate
+echo "[INFO] Finished. Check ./results/ for logs and outputs."
